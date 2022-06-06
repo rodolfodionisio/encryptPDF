@@ -1,0 +1,13 @@
+version: "3"
+
+services: 
+    cron:
+        container_name: api_efleet_mail
+        env_file: .env
+        build: 
+            context: .
+            dockerfile: docker/Dockerfile
+        volumes:
+            - ./src/offset.txt:/app/src/offset.txt
+        working_dir: /app
+        restart: on-failure:3
