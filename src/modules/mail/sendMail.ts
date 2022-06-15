@@ -4,12 +4,12 @@ export async function sendMail(buffer) {
    // console.log("email", buffer);
 
   let transporter = nodemailer.createTransport({
-    host: "smtp.rededompedro.com",
+    host: "",
     port: 587,
     secure: false,
     auth: {
-      user: "rodolfo.souza@rededompedro.com",
-      pass: "Dompedro@2022",
+      user: "",
+      pass: "",
     },
     tls: {
       rejectUnauthorized: false,
@@ -17,20 +17,20 @@ export async function sendMail(buffer) {
   });
 
   let info = await transporter.sendMail({
-    from: "rodolfo.souza@rededompedro.com",
-    to: "rodolfo.souza@rededompedro.com",
+    from: "",
+    to: "",
     subject: "Boleto",
-    text: "Hello world",
-    html: "Hello world",
+    text: "Boleto",
+    html: "Boleto",
     attachments: [
       {
-        filename: "buffer",
+        filename: "Boleto",
         content: buffer,
         contentType: "pdf",
       },
     ],
   });
-  console.log("Email enviado com sucesso!");
+  console.log("E-mail enviado com sucesso!");
 }
 
   
